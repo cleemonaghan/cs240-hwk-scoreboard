@@ -5,7 +5,24 @@
 	font-size: 12pt;
 }
 
-.scoreboard {
+table {
 	background-color: rgb(50, 100, 85);
 	color: white;
+}
+
+.scoreboard {
+}
+
+#tableTitle {
+	font-size: 28pt;
+}
+
+.inningScore {
+	border: solid black;
+	text-align: center;
+}
+
+.totalScore {
+	border: solid white;
+	text-align: center;
 }
