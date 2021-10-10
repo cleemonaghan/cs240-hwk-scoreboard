@@ -1,1 +1,11 @@
 /* Your CSS definitions here */
+
+* {
+	font-family: "arial";
+	font-size: 12pt;
+}
+
+.scoreboard {
+	background-color: rgb(50, 100, 85);
+	color: white;
+}
