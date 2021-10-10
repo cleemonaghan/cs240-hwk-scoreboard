@@ -11,6 +11,7 @@ table {
 }
 
 .scoreboard {
+	text-align: center;
 }
 
 #tableTitle {
@@ -20,9 +21,13 @@ table {
 .inningScore {
 	border: solid black;
 	text-align: center;
+	height: 30px;
+	width: 20px;
 }
 
 .totalScore {
 	border: solid white;
 	text-align: center;
+	height: 30px;
+	width: 20px;
 }
