@@ -8,7 +8,7 @@
 		<!--scoreboard-->
 		<table class="scoreboard">
 			<thead>
-				<th id="tableTitle">Colin's Field</th>
+				<th id="tableTitle">COLIN FIELD</th>
 			</thead>
 			<tbody>
 				<!-- The scoreboard innings-->
@@ -67,9 +67,60 @@
 			</tbody>
 		</table>
 		<!--control center-->
-		<table>
-			<thead></thead>
-			<tbody></tbody>
+		<table class="controlCenter">
+			<thead>
+				<th id="tableTitle">CONTROL CENTER</th>
+			</thead>
+			<tbody>
+				<!-- Row 1: Who, Inning-->
+				<tr>
+					<th>Who:</th>
+					<td>
+						<select id="who">
+							<option value="home">Home</option>
+							<option value="away">Away</option>
+						</select>
+					</td>
+					<th>Inning:</th>
+					<td>
+						<select id="inning">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+						</select>
+					</td>
+				</tr>
+				<!-- Row 2: Add runs -->
+				<tr>
+					<th>Runs:</th>
+					<td>
+						<input id="+" type="button" value="+" onclick="addPoint()" />
+						<input id="-" type="button" value="-" onclick="subPoint()" />
+					</td>
+				</tr>
+				<!-- Row 3: Sound -->
+				<tr>
+					<th>Sound:</th>
+					<td>
+						<input
+							id="music1"
+							type="button"
+							value="JJ"
+							onclick="playMusic1()"
+						/>
+						<input
+							id="music2"
+							type="button"
+							value="ll"
+							onclick="playMusic2()"
+						/>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 
 		<script src="app.js"></script>

@@ -35,3 +35,8 @@ img {
 	height: 30px;
 	width: 20px;
 }
+
+.controlCenter {
+	background-color: black;
+	color: white;
+}
