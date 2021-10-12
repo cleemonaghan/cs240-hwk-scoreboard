@@ -10,6 +10,24 @@ var GamePoints = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
+init();
+
+function init() {
+	//initialize the html for home team
+	for (let i = 1; i < GamePoints[0].length; i++) {
+		document.querySelector(`#home${i}`).innerHTML = GamePoints[0][i - 1];
+	}
+	document.querySelector(`#hometotal`).innerHTML =
+		GamePoints[0][GamePoints[0].length - 1];
+
+	//initialize the html for away team
+	for (let i = 1; i < GamePoints[0].length; i++) {
+		document.querySelector(`#away${i}`).innerHTML = GamePoints[1][i - 1];
+	}
+	document.querySelector(`#awaytotal`).innerHTML =
+		GamePoints[1][GamePoints[1].length - 1];
+}
+
 function addPoint() {
 	//retrieve the team and inning from html
 	let team = document.querySelector("#who").value;
