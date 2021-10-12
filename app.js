@@ -77,6 +77,39 @@ function subPoint() {
 	}
 }
 
-function playMusic1() {}
+/**
+ * When the left button (the one with music notes) is pressed, this function will randomly play
+ * one of: charge1.mp3, charge2.mp3, or buildup.mp3. And also randomly display one
+ * of the images to the right of the box score.
+ */
+function playMusic1() {
+	//select a random song
+	let song;
+	let rand = Math.random();
+	if (rand < 0.33) song = "sounds/charge1.mp3";
+	else if (rand > 0.67) song = "sounds/charge2.mp3";
+	else song = "sounds/buildup.mp3";
+
+	//play the audio
+	let audioElement = new Audio(song);
+	audioElement.addEventListener("canplaythrough", () => {
+		// The duration variable now holds the duration (in seconds) of the audio clip
+		let duration = audioElement.duration;
+		//play the adio
+		audioElement.play();
+	});
+
+	//select a random image
+	let img;
+	rand = Math.random();
+	if (rand < 0.33) img = "images/megaphone.png";
+	else if (rand > 0.67) img = "images/sdchicken.jpg";
+	else img = "images/ups.png";
+
+	//select the image from the html
+	let htmlImageObject = document.querySelector("#scoreboardImage");
+	console.log(htmlImageObject);
+	htmlImageObject.src = img;
+}
 
 function playMusic2() {}
