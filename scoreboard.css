@@ -20,6 +20,8 @@ img {
 
 #tableTitle {
 	font-size: 28pt;
+	text-align: center;
+	padding-bottom: 10px;
 }
 
 .inningScore {
@@ -39,4 +41,12 @@ img {
 .controlCenter {
 	background-color: black;
 	color: white;
+	border: 10px solid;
+	border-style: outset;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+input {
+	font-family: Courier, monospace;
 }
