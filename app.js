@@ -9,6 +9,8 @@ var GamePoints = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
 ];
+//the audio element
+var audioElement = new Audio();
 
 init();
 
@@ -91,25 +93,31 @@ function playMusic1() {
 	else song = "sounds/buildup.mp3";
 
 	//play the audio
-	let audioElement = new Audio(song);
-	audioElement.addEventListener("canplaythrough", () => {
-		// The duration variable now holds the duration (in seconds) of the audio clip
-		let duration = audioElement.duration;
-		//play the adio
-		audioElement.play();
-	});
+	audioElement.src = song;
+	audioElement.play();
 
 	//select a random image
-	let img;
+	let newImg;
 	rand = Math.random();
-	if (rand < 0.33) img = "images/megaphone.png";
-	else if (rand > 0.67) img = "images/sdchicken.jpg";
-	else img = "images/ups.png";
+	if (rand < 0.33) newImg = "images/megaphone.png";
+	else if (rand > 0.67) newImg = "images/sdchicken.jpg";
+	else newImg = "images/ups.png";
 
-	//select the image from the html
-	let htmlImageObject = document.querySelector("#scoreboardImage");
-	console.log(htmlImageObject);
-	htmlImageObject.src = img;
+	//select the image from the html and replace the image with the new one
+	let img = document.querySelector("#scoreboardImage");
+	img.src = newImg;
 }
 
-function playMusic2() {}
+/**
+ * When the right button (the one with a keyboard) is pressed, the Chicken Dance is played: chickendance.mp3,
+ * and the sdchicken.jpg is displayed to the right of the box score.
+ */
+function playMusic2() {
+	//play the audio
+	audioElement.src = "sounds/chickendance.mp3";
+	audioElement.play();
+
+	//select the image from the html and replace the image with the new one
+	let img = document.querySelector("#scoreboardImage");
+	img.src = "images/sdchicken.jpg";
+}
