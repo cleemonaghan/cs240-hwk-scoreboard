@@ -12,8 +12,13 @@ var GamePoints = [
 //the audio element
 var audioElement = new Audio();
 
+//initialize the html
 init();
 
+/**
+ * This function initializes the scoreboard, setting the value of each
+ * inning to its value in GamePoints (ie. setting each value to 0).
+ */
 function init() {
 	//initialize the html for home team
 	for (let i = 1; i < GamePoints[0].length; i++) {
@@ -30,6 +35,10 @@ function init() {
 		GamePoints[1][GamePoints[1].length - 1];
 }
 
+/**
+ * This function adds a point to GamePoints and to the scoreboard
+ * for the team and inning selected on the control center.
+ */
 function addPoint() {
 	//retrieve the team and inning from html
 	let team = document.querySelector("#who").value;
@@ -53,6 +62,10 @@ function addPoint() {
 		GamePoints[gameIndex][GamePoints[gameIndex].length - 1];
 }
 
+/**
+ * This function subtracts a point (if the total points is greater than zero)
+ * to GamePoints and to the scoreboard for the team and inning selected on the control center.
+ */
 function subPoint() {
 	//retrieve the team and inning from html
 	let team = document.querySelector("#who").value;
