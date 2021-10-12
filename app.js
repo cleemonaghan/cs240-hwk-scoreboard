@@ -24,9 +24,13 @@ function addPoint() {
 
 	//add a point to the inning and refresh the html
 	GamePoints[gameIndex][inning - 1] += 1;
+	document.querySelector(`#${team}${inning}`).innerHTML =
+		GamePoints[gameIndex][inning - 1];
 
 	//add a point to the total and refresh the html
-	GamePoints[gameIndex][GamePoints[gameIndex].length] += 1;
+	GamePoints[gameIndex][GamePoints[gameIndex].length - 1] += 1;
+	document.querySelector(`#${team}total`).innerHTML =
+		GamePoints[gameIndex][GamePoints[gameIndex].length - 1];
 }
 
 function subPoint() {}
