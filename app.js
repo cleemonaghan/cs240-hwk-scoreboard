@@ -51,7 +51,31 @@ function addPoint() {
 		GamePoints[gameIndex][GamePoints[gameIndex].length - 1];
 }
 
-function subPoint() {}
+function subPoint() {
+	//retrieve the team and inning from html
+	let team = document.querySelector("#who").value;
+	let inning = document.querySelector("#inning").value;
+
+	let gameIndex = 1;
+	if (team == "home") {
+		//decrement the points for home
+		gameIndex = 0;
+	}
+	//otherwise we decrement points for away
+
+	//check if we can decrement
+	if (GamePoints[gameIndex][inning - 1] > 0) {
+		//remove a point to the inning and refresh the html
+		GamePoints[gameIndex][inning - 1] -= 1;
+		document.querySelector(`#${team}${inning}`).innerHTML =
+			GamePoints[gameIndex][inning - 1];
+
+		//remove a point to the total and refresh the html
+		GamePoints[gameIndex][GamePoints[gameIndex].length - 1] -= 1;
+		document.querySelector(`#${team}total`).innerHTML =
+			GamePoints[gameIndex][GamePoints[gameIndex].length - 1];
+	}
+}
 
 function playMusic1() {}
 
